@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>movie name</th>
+    <th>date</th>
+    <th>director</th>
+    <th>screenwriter</th>
+    <th>producer</th>
+  </tr>
+  <tr *ngFor="let movie of movies">
+    <td>{{ movie.name }}</td>
+    <td>{{ movie.date }}</td>
+    <td>{{ movie.director }}</td>
+    <td>{{ movie.screenwriter }}</td>
+    <td>{{ movie.producer }}</td>
+  </tr>
+</table>

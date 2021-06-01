@@ -1,5 +1,5 @@
 {
-  "name": "youtube-content",
+  "name": "movie-content",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -18,6 +18,8 @@
     "@angular/platform-browser": "~12.0.2",
     "@angular/platform-browser-dynamic": "~12.0.2",
     "@angular/router": "~12.0.2",
+    "@types/gapi": "^0.0.39",
+    "coronavirusapi-wrapper": "^2.1.5",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"
