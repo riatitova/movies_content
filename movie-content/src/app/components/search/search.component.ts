@@ -7,7 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./search.component.less']
 })
 export class SearchComponent {
-  value = 'Clear me';
-  constructor() { }
 
+  searchedMovie: string;
+
+  constructor() { 
+    this.searchedMovie = '';
+  }
+
+  search(movie: string) {
+    console.log(movie)
+  }
 }
