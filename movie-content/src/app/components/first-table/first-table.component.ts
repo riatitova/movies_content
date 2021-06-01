@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { movies, moviesData } from 'src/app/models/movies';
 import { MovieService } from 'src/app/services/movie.service';
+import { TableService } from 'src/app/services/table.service';
 
 @Component({
   selector: 'app-first-table',
@@ -10,9 +11,9 @@ import { MovieService } from 'src/app/services/movie.service';
 export class FirstTableComponent {
   movies: movies;
 
-  constructor(movieService: MovieService) { 
+  constructor(movieService: MovieService, tableService: TableService) { 
     this.movies = movieService.serverMoviesData;
-    console.log(this.movies);
+    tableService.searchMovie(this.movies, 'мстители');
   }
 
 

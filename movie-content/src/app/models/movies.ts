@@ -233,3 +233,4 @@ export const moviesData = [
 ];
 
 export type movies = typeof moviesData;
+export type movie = typeof moviesData[0];
