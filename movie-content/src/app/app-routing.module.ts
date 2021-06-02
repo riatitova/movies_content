@@ -10,7 +10,13 @@ const routes: Routes = [
         (module) => module.FirstPageModule
       ),
   },
- 
+  {
+    path: ParamKey.secondPage,
+    loadChildren: () =>
+      import('./pages/second-page/second-page.module').then(
+        (module) => module.SecondPageModule
+      ),
+  },
   { path: ParamKey.notFound, redirectTo: QueryParamKey.redirectTo },
 ];
 
