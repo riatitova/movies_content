@@ -14,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export default class RegistrationPageRoutingModule {}
+export default class FirstPageRoutingModule {}

@@ -10,9 +10,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
+import { DatepickerComponent } from './datepicker/datepicker.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 @NgModule({
-  declarations: [FirstTableComponent, SearchComponent],
+  declarations: [FirstTableComponent, SearchComponent, DatepickerComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -24,7 +27,9 @@ import { MatTableModule } from '@angular/material/table';
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
-  exports: [FirstTableComponent, SearchComponent],
+  exports: [FirstTableComponent, SearchComponent, DatepickerComponent],
 })
 export class CoreModule {}
