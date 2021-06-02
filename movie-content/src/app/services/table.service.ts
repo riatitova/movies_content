@@ -12,7 +12,8 @@ export class TableService {
     this.data = moviesData;
   }
 
-  searchMovie(allMovies: movies, movie: string): movies {
+  searchMovie(movie: string): movies {
+    const allMovies = this.data;
     const searchedElement = movie.toLowerCase();
     const result: movies = [];
     allMovies.forEach((value: movie) => {
@@ -54,7 +55,6 @@ export class TableService {
       isIncludes = false;
       return;
     });
-    console.log(result);
     this.data = result;
     localStorage.setItem('first-page-movies', JSON.stringify(this.data));
     return result;

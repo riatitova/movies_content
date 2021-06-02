@@ -8,15 +8,13 @@ import { TableService } from 'src/app/services/table.service';
   styleUrls: ['./search.component.less']
 })
 export class SearchComponent {
-  movies: movies;
   searchedMovie: string;
 
   constructor(private tableService: TableService) { 
     this.searchedMovie = '';
-    this.movies = JSON.parse(String(localStorage.getItem('first-page-movies'))) || moviesData;
   }
 
   search(movie: string) {
-    this.tableService.searchMovie(this.movies, movie);
+    this.tableService.searchMovie(movie);
   }
 }
