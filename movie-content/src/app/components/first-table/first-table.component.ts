@@ -1,15 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 import { movies, moviesData } from 'src/app/models/movies';
 import { MovieService } from 'src/app/services/movie.service';
-import { TableService } from 'src/app/services/table.service';
 
 @Component({
   selector: 'app-first-table',
   templateUrl: './first-table.component.html',
   styleUrls: ['./first-table.component.less'],
 })
-export class FirstTableComponent {
-  movies: movies;
+export class FirstTableComponent implements DoCheck {
   displayedColumns: string[] = [
     'name',
     'date',
@@ -17,12 +15,19 @@ export class FirstTableComponent {
     'screenwriter',
     'producer',
   ];
-  dataSource: movies;
+  dataSource: movies = moviesData;
+  movies: movies;
 
-  constructor(movieService: MovieService, tableService: TableService) {
-    this.movies = movieService.serverMoviesData;
+  constructor(private movieService: MovieService) {
+    this.movies = this.movieService.getMovies();
     this.dataSource = this.movies;
-    tableService.searchMovie(this.movies, 'мстители');
   }
 
+  // I know it's a bad way, but mat-table doesn't work with async pipe
+  ngDoCheck(): void {
+    this.movies =
+      JSON.parse(String(localStorage.getItem('first-page-movies'))) ||
+      moviesData;
+    this.dataSource = this.movies;
+  }
 }
