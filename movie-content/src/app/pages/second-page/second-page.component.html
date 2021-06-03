@@ -1,9 +1,11 @@
-Second Page
+<h1 class="mat-headline">Second Page</h1>
 <div class="wrapper">
   <div class="options">
-    <app-search [currentPage]='"вторая"'></app-search>
-    <app-datepicker [currentPage]='"вторая"'></app-datepicker>
-    <app-button [page]='"первую"'></app-button>
+    <app-search [currentPage]="'вторая'"></app-search>
+    <app-datepicker [currentPage]="'вторая'"></app-datepicker>
+    <app-button [page]="'первую'"></app-button>
   </div>
-  <app-second-table></app-second-table>
+  <div class="table">
+    <app-second-table></app-second-table>
+  </div>
 </div>
