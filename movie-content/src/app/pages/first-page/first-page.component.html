@@ -1,8 +1,10 @@
+<h1 class="mat-headline">First Page</h1>
 <div class="wrapper">
   <div class="options">
-    <app-search></app-search>
-    <app-datepicker></app-datepicker>
-    <app-button></app-button>
+    <app-search [currentPage]='"первая"'></app-search>
+    <app-datepicker [currentPage]='"первая"'></app-datepicker>
+    <app-button [page]='"вторую"'></app-button>
+    <app-clear-button [page]='"первая"'></app-clear-button>
   </div>
   <app-first-table></app-first-table>
 </div>

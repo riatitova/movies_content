@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,9 +7,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./button.component.less'],
 })
 export class ButtonComponent {
-  constructor(private router: Router) {}
+  @Input()
+  page: string = '';
 
-  navigateToSecondPage(): void {
-    this.router.navigate(['second-page']);
+  constructor(private router: Router) {}
+  navigateTo(): void {
+    if (this.page === 'первую') {
+      this.router.navigate(['']);
+    } else {
+      this.router.navigate(['/second-page']);
+    }
   }
 }

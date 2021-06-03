@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { movies, moviesData } from 'src/app/models/movies';
+import { Component, Input } from '@angular/core';
 import { TableService } from 'src/app/services/table.service';
 
 @Component({
@@ -8,6 +7,9 @@ import { TableService } from 'src/app/services/table.service';
   styleUrls: ['./search.component.less']
 })
 export class SearchComponent {
+  @Input()
+  currentPage: string = '';
+
   searchedMovie: string;
 
   constructor(private tableService: TableService) { 
@@ -15,6 +17,6 @@ export class SearchComponent {
   }
 
   search(movie: string) {
-    this.tableService.searchMovie(movie);
+    this.tableService.searchMovie(movie, this.currentPage);
   }
 }

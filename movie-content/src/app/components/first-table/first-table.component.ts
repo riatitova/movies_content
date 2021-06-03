@@ -15,19 +15,21 @@ export class FirstTableComponent implements DoCheck {
     'screenwriter',
     'producer',
   ];
+
   dataSource: movies = moviesData;
-  movies: movies;
+  moviesFirstPage: movies = [];
+ 
 
   constructor(private movieService: MovieService) {
-    this.movies = this.movieService.getMovies();
-    this.dataSource = this.movies;
+    this.moviesFirstPage = this.movieService.getMovies('первая');
+    this.dataSource = this.moviesFirstPage;
   }
 
   // I know it's a bad way, but mat-table doesn't work with async pipe
   ngDoCheck(): void {
-    this.movies =
+    this.moviesFirstPage =
       JSON.parse(String(localStorage.getItem('first-page-movies'))) ||
       moviesData;
-    this.dataSource = this.movies;
+    this.dataSource = this.moviesFirstPage;
   }
 }
