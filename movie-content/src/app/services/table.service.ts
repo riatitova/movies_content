@@ -93,4 +93,12 @@ export class TableService {
       );
     }
   }
+
+  clear(currentPage: string): void {
+    if (currentPage === 'первая') {
+      localStorage.setItem('first-page-movies', JSON.stringify(''));
+    } else {
+      localStorage.setItem('second-page-movies', JSON.stringify(''));
+    }
+  }
 }

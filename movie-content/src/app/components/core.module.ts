@@ -16,9 +16,10 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { ButtonComponent } from './button/button.component';
 import {MatButtonModule} from '@angular/material/button';
 import { SecondTableComponent } from './second-table/second-table.component';
+import { ClearButtonComponent } from './clear-button/clear-button.component';
 
 @NgModule({
-  declarations: [FirstTableComponent, SearchComponent, DatepickerComponent, ButtonComponent, SecondTableComponent],
+  declarations: [FirstTableComponent, SearchComponent, DatepickerComponent, ButtonComponent, SecondTableComponent, ClearButtonComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -34,6 +35,6 @@ import { SecondTableComponent } from './second-table/second-table.component';
     MatNativeDateModule,
     MatButtonModule
   ],
-  exports: [FirstTableComponent, SearchComponent, DatepickerComponent, ButtonComponent, SecondTableComponent],
+  exports: [FirstTableComponent, SearchComponent, DatepickerComponent, ButtonComponent, SecondTableComponent, ClearButtonComponent],
 })
 export class CoreModule {}
