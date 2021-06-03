@@ -1,3 +1,5 @@
+@import '../../../less/variables.less';
+
 .mat-row:hover .mat-cell {
   border-color: currentColor;
 }
@@ -22,4 +24,10 @@ th.mat-sort-header-sorted {
   max-width: 70vw;
   max-height: 70vh;
   overflow: scroll;
+}
+
+@media (max-width: @sizes[middle-size]) {
+  .wrapper {
+    max-height: 55vh;
+  }
 }

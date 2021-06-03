@@ -1,8 +1,8 @@
-@import '../../../less/variables.less';
+@import "../../../less/variables.less";
 
 .mat-headline {
   padding: 1rem;
-  color:  @header-color;
+  color: @header-color;
 }
 .wrapper {
   display: flex;
@@ -13,4 +13,13 @@
   width: 60rem;
   display: flex;
   justify-content: space-around;
+}
+
+@media (max-width: @sizes[middle-size]) {
+  .options {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
