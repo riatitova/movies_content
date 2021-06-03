@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import {
   MAT_MOMENT_DATE_FORMATS,
@@ -29,6 +29,9 @@ import { TableService } from 'src/app/services/table.service';
   ],
 })
 export class DatepickerComponent {
+  @Input()
+  currentPage: string = '';
+
   range = new FormGroup({
     start: new FormControl(),
     end: new FormControl(),
@@ -56,7 +59,8 @@ export class DatepickerComponent {
         this.tableService.filterByDate(
           this.allDates,
           this.startDate,
-          this.endDate
+          this.endDate,
+          this.currentPage
         );
       }
     });
